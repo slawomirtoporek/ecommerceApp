@@ -9,3 +9,63 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model Album {
+  id String @id @default(uuid())
+  title String
+  artist String
+  genre String
+  releaseDate DateTime
+  description String?
+  format String?
+  price Float
+  stock Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  orderItems OrderItem[]
+  images AlbumImage[]
+  tracks Track[]
+}
+
+model AlbumImage {
+  id String @id @default(uuid())
+  album Album @relation(fields: [albumId], references: [id])
+  albumId String
+  url String
+}
+
+model Track {
+  id String @id @default(uuid())
+  album Album @relation(fields: [albumId], references: [id])
+  albumId String
+  trackNumber Int
+  title String
+  duration String
+}
+
+model Order {
+  id String @id @default(uuid())
+  firstName String
+  lastName String
+  address String
+  email String
+  phoneNumber String
+  comment String?
+  totalAmount Float
+  status String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  orderItems   OrderItem[]
+}
+
+model OrderItem {
+  id String @id @default(uuid())
+  order Order @relation(fields: [orderId], references: [id])
+  orderId String
+  album Album @relation(fields: [albumId], references: [id])
+  albumId String
+  quantity Int
+  price Float
+}
