@@ -52,6 +52,8 @@ model Order {
   email String
   phoneNumber String
   comment String?
+  delivery String
+  priceProducts Int
   totalAmount Float
   status String
   createdAt DateTime @default(now())
