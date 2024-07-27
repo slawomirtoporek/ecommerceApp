@@ -30,18 +30,23 @@ model Album {
 
 model AlbumImage {
   id String @id @default(uuid())
-  album Album @relation(fields: [albumId], references: [id])
+  album Album @relation(fields: [albumId], references: [id], onDelete: Cascade)
   albumId String
   url String
 }
 
 model Track {
   id String @id @default(uuid())
-  album Album @relation(fields: [albumId], references: [id])
+  album Album @relation(fields: [albumId], references: [id], onDelete: Cascade)
   albumId String
   trackNumber Int
   title String
   duration String
+}
+
+enum DeliveryMethod {
+  POST
+  COURIER
 }
 
 model Order {
@@ -52,8 +57,8 @@ model Order {
   email String
   phoneNumber String
   comment String?
-  delivery String
-  priceProducts Int
+  delivery DeliveryMethod
+  priceProducts Float
   totalAmount Float
   status String
   createdAt DateTime @default(now())
@@ -64,10 +69,10 @@ model Order {
 
 model OrderItem {
   id String @id @default(uuid())
-  order Order @relation(fields: [orderId], references: [id])
+  order Order @relation(fields: [orderId], references: [id], onDelete: Cascade)
   orderId String
-  album Album @relation(fields: [albumId], references: [id])
-  albumId String
+  album Album? @relation(fields: [albumId], references: [id], onDelete: SetNull)
+  albumId String?
   quantity Int
   price Float
 }
