@@ -7,9 +7,10 @@ import {
 import * as cors from 'cors';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { AlbumsModule } from './albums/albums.module';
 
 @Module({
-  imports: [],
+  imports: [AlbumsModule],
   controllers: [AppController],
   providers: [AppService],
 })
