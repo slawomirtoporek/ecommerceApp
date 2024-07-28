@@ -8,9 +8,10 @@ import * as cors from 'cors';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AlbumsModule } from './albums/albums.module';
+import { OrdersModule } from './orders/orders.module';
 
 @Module({
-  imports: [AlbumsModule],
+  imports: [AlbumsModule, OrdersModule],
   controllers: [AppController],
   providers: [AppService],
 })
