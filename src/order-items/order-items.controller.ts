@@ -2,11 +2,11 @@ import { Controller, ParseUUIDPipe, Post, Body, Param } from '@nestjs/common';
 import { OrderItemsService } from './order-items.service';
 import { CreateOrderItemDTO } from '../order-items/dtos/create-order-items.dto';
 
-@Controller('orders/:orderId/order-items')
+@Controller('order-items')
 export class OrderItemsController {
   constructor(private orderItemsService: OrderItemsService) {}
 
-  @Post()
+  @Post('/')
   create(
     @Param('orderId', ParseUUIDPipe) orderId: string,
     @Param('albumId', ParseUUIDPipe) albumId: string,
