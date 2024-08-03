@@ -1,0 +1,25 @@
+@import '../../../styles/settings.scss'; 
+
+.albumImg {
+  height: 300px;
+  width: 100%;
+}
+
+.albumBox {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.card {
+  background-color: $background-color-card !important;
+}
+
+.title {
+  height: 50px;
+}
+
+.button {
+  background-color: $color-grey !important;
+  border: none !important;
+}
