@@ -7,10 +7,17 @@ $color-light-dark: #262626;
 $color-dark: #0B0C0D;
 
 // Global
-$background-color: $color-light;
+$global-background-color: $color-light;
 
-// Card album
-$background-color-card: $color-white;
+// Album Summary
+$album-summary-card: $color-white;
 
 // NavBar
-$background-nav: $color-grey;
+$nav-bar-background: $color-grey;
+
+// Album Data List
+$album-list: $color-light;
+
+// Number Item
+$number-item-btn: $color-grey;
+$number-item-btn-char: $color-white;

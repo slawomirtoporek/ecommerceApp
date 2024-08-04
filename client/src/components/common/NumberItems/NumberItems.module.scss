@@ -1,0 +1,17 @@
+@import '../../../styles/settings.scss';
+
+.btnItem {
+  font-size: 20px;
+  background-color: $number-item-btn;
+  width: 32px;
+  height: 32px;
+  border-radius: 3px;
+  color: $number-item-btn-char;
+  font-weight: 600;
+  border: none;
+  margin: 0 5px;
+
+  &:hover {
+    background: darken($number-item-btn, 10%);
+  }
+}
