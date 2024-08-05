@@ -1,7 +1,8 @@
-import { Card, Button } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import { IMAGES_URL } from '../../../config';
 import { Link } from 'react-router-dom';
 import styles from './AlbumSummary.module.scss';
+import SubmitButton from '../../common/SubmitButton/SubmitButton';
 
 const SummaryAlbum = ({ album }) => {
 
@@ -17,7 +18,7 @@ const SummaryAlbum = ({ album }) => {
         <div className='d-flex justify-content-between'>
           <Card.Text className='my-auto fs-5'>{album.price}$</Card.Text>
           <Link to={`/album/${album.id}`}>
-            <Button className={styles.button}>See More</Button>
+            <SubmitButton className={styles.button}>See More</SubmitButton>
           </Link>
         </div>
       </Card.Body>

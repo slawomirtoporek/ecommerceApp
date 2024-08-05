@@ -6,21 +6,32 @@ import { Album } from '@prisma/client';
 export class AlbumsService {
   constructor(private prismaService: PrismaService) {}
 
-  public getAll(): Promise<Album[]> {
-    return this.prismaService.album.findMany({
-      include: {
-        images: true,
-      },
-    });
+  public async getAll(): Promise<Album[]> {
+    try {
+      return await this.prismaService.album.findMany({
+        include: {
+          images: true,
+          tracks: true,
+        },
+      });
+    } catch (error) {
+      console.error('Error fetching albums:', error);
+      throw error;
+    }
   }
 
-  public getById(id: Album['id']): Promise<Album | null> {
-    return this.prismaService.album.findUnique({
-      where: { id },
-      include: {
-        tracks: true,
-        images: true,
-      },
-    });
+  public async getById(id: Album['id']): Promise<Album | null> {
+    try {
+      return await this.prismaService.album.findUnique({
+        where: { id },
+        include: {
+          tracks: true,
+          images: true,
+        },
+      });
+    } catch (error) {
+      console.error(`Error fetching album with id ${id}:`, error);
+      throw error;
+    }
   }
 }

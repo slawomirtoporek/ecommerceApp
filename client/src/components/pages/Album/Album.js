@@ -1,6 +1,9 @@
+import AlbumData from "../../features/AlbumData/AlbumData"
+
+
 const Album = () => {
   return(
-    <h1>Album</h1>
+    <AlbumData />
   );
 };
 

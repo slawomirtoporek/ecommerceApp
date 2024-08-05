@@ -1,0 +1,30 @@
+@import '../../../styles/settings.scss'; 
+
+.spanList {
+  font-weight: 500;
+}
+
+.listItem {
+  background-color: $album-list !important;
+}
+
+.spanTrack {
+  margin-right: 10px;
+}
+
+.spanDuration {
+  margin: 0 15px;
+}
+
+.button {
+  background-color: $color-grey !important;
+  border: none !important;
+  width: 220px;
+  margin: 5px;
+}
+
+@media (max-width: 767px){
+  .cardData {
+    margin-left: 16px !important;
+  }
+}
