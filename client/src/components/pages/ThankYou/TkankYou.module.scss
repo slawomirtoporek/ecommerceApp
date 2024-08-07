@@ -1,0 +1,16 @@
+@import '../../../styles/global.scss';
+
+.fullHeightContainer {
+  min-height: 100vh;
+}
+
+.button {
+  background-color: $submit-btn !important;
+  border: none !important;
+  width: 220px;
+  margin: 5px;
+
+  &:hover {
+    background: darken($submit-btn-hover, 10%) !important;
+  }
+}

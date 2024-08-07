@@ -1,6 +1,8 @@
+import OrderForm from "../../features/OrderForm/OrderForm"
+
 const Order = () => {
-  return(
-    <h1>Order</h1>
+  return (
+    <OrderForm />
   );
 };
 

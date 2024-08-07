@@ -8,13 +8,13 @@ const NumberItems = ({ numberItems, stock, actPlus, actMinus }) => {
       Quantity: 
       <button className={styles.btnItem} onClick={actMinus} disabled={numberItems <= 1}>
         <span className={styles.char}>
-          <FontAwesomeIcon className={styles.icon} icon={faPlus} />
+          <FontAwesomeIcon className={styles.icon} icon={faMinus} />
         </span>
       </button>
         {numberItems}
       <button className={styles.btnItem} onClick={actPlus}  disabled={numberItems >= stock}>
         <span className={styles.char}>
-          <FontAwesomeIcon className={styles.icon} icon={faMinus} />
+          <FontAwesomeIcon className={styles.icon} icon={faPlus} />
         </span>
       </button>
     </>

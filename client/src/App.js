@@ -6,6 +6,7 @@ import Cart from './components/pages/Cart/Cart';
 import Order from './components/pages/Order/Order';
 import Header from './components/views/Header/Header';
 import Footer from './components/views/Footer/Footer';
+import ThankYou from './components/pages/ThankYou/TkankYou';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/album/:id" element={<Album />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/order" element={<Order />} />
+        <Route path="/thankyou" element={<ThankYou />} />
         <Route path="*" element={<Home />} />
       </Routes>
       <Footer />
