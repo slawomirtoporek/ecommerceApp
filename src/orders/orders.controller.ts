@@ -28,11 +28,8 @@ export class OrdersController {
     return order;
   }
 
-  @Post('/:albumId')
-  create(
-    @Param('albumId', new ParseUUIDPipe()) albumId: string,
-    @Body() orderData: CreateOrderDTO,
-  ) {
-    return this.ordersService.create(orderData, albumId);
+  @Post('/')
+  create(@Body() orderData: CreateOrderDTO) {
+    return this.ordersService.create(orderData);
   }
 }

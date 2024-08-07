@@ -1,6 +1,10 @@
-import { IsNotEmpty, IsNumber, Min } from 'class-validator';
+import { IsNotEmpty, IsNumber, Min, IsString } from 'class-validator';
 
 export class CreateOrderItemDTO {
+  @IsNotEmpty()
+  @IsString()
+  albumId: string;
+
   @IsNotEmpty()
   @IsNumber()
   @Min(1)

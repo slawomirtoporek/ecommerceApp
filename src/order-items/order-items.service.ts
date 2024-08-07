@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { OrderItem } from '@prisma/client';
 import { PrismaService } from 'src/shared/services/prisma.service';
+import { CreateOrderItemDTO } from '../order-items/dtos/create-order-items.dto';
 
 @Injectable()
 export class OrderItemsService {
@@ -9,7 +10,7 @@ export class OrderItemsService {
   public create(
     orderId: string,
     albumId: string,
-    orderItemData: Omit<OrderItem, 'id' | 'orderId' | 'albumId'>,
+    orderItemData: CreateOrderItemDTO,
   ): Promise<OrderItem> {
     return this.prismaService.orderItem.create({
       data: {

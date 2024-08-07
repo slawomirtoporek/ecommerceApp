@@ -24,17 +24,14 @@ export class OrdersService {
     });
   }
 
-  public async create(
-    orderData: CreateOrderDTO,
-    albumId: string,
-  ): Promise<Order> {
+  public async create(orderData: CreateOrderDTO): Promise<Order> {
     try {
       const order = await this.prismaService.order.create({
         data: {
           ...orderData,
           orderItems: {
             create: orderData.orderItems.map((item) => ({
-              albumId,
+              albumId: item.albumId,
               quantity: item.quantity,
               price: item.price,
             })),

@@ -6,7 +6,7 @@ import { CreateOrderItemDTO } from '../order-items/dtos/create-order-items.dto';
 export class OrderItemsController {
   constructor(private orderItemsService: OrderItemsService) {}
 
-  @Post('/')
+  @Post('/:orderId/:albumId')
   create(
     @Param('orderId', ParseUUIDPipe) orderId: string,
     @Param('albumId', ParseUUIDPipe) albumId: string,
