@@ -10,14 +10,14 @@ import { AppService } from './app.service';
 import { AlbumsModule } from './albums/albums.module';
 import { OrdersModule } from './orders/orders.module';
 import { OrderItemsModule } from './order-items/order-items.module';
-// import { join } from 'path';
-// import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
+import { ServeStaticModule } from '@nestjs/serve-static';
 
 @Module({
   imports: [
-    // ServeStaticModule.forRoot({
-    //   rootPath: join(__dirname, '../../', 'client', 'build'),
-    // }),
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '../../', 'client', 'build'),
+    }),
     AlbumsModule,
     OrdersModule,
     OrderItemsModule,
