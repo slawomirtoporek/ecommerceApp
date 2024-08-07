@@ -6,6 +6,10 @@ $color-grey: #666A73;
 $color-light-dark: #262626;
 $color-dark: #0B0C0D;
 
+// Button
+$submit-btn: $color-grey;
+$submit-btn-hover: $color-grey;
+
 // Global
 $global-background-color: $color-light;
 
@@ -21,3 +25,7 @@ $album-list: $color-light;
 // Number Item
 $number-item-btn: $color-grey;
 $number-item-btn-char: $color-white;
+
+// Cart 
+$cart-list-list-odd: $color-light;
+$cart-clear-button-background: $color-light;

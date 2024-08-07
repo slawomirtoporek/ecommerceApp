@@ -6,7 +6,7 @@ import { Row, Col, Card, Container, ListGroup } from "react-bootstrap";
 import { IMAGES_URL } from '../../../config';
 import styles from '../AlbumData/AlbumData.module.scss';
 import NumberItems from "../../common/NumberItems/NumberItems";
-import SubmitButton from "../../common/SubmitButton/SubmitButton";
+import AddToCartBtn from "../../common/AddToCartBtn/AddToCartBtn";
 
 const AlbumData = () => {
   const { id } = useParams();
@@ -60,8 +60,8 @@ const AlbumData = () => {
         <Card className="d-flex flex-lg-row flex-md-row p-0">
           <Col xs={12} md={6} lg={7} className="p-3">
             {album.images && album.images.length > 0 && album.images.map(albumImg => (
-              <div className={`${styles.albumBox} img-fluid`} key={albumImg.id}>
-                <Card.Img key={albumImg.id} variant="top" className={`${styles.albumImg} img-fluid`} src={`${IMAGES_URL}/${albumImg.url}`} alt={album.title} />
+              <div className='img-fluid' key={albumImg.id}>
+                <Card.Img key={albumImg.id} variant="top" className='img-fluid' src={`${IMAGES_URL}/${albumImg.url}`} alt={album.title} />
               </div>
             ))}
           </Col>
@@ -88,8 +88,8 @@ const AlbumData = () => {
                 <Card.Text className="d-block m-0 p-0">Total price: {price && parseFloat(price).toFixed(2)}$</Card.Text>
               </Card.Body>
               <Card.Body className="d-flex align-items-center flex-column p-0">
-                <SubmitButton className={styles.button}>Add to cart</SubmitButton>
-                <SubmitButton className={styles.button}>Order</SubmitButton>
+                <AddToCartBtn item={{ id: album.id, title: album.title, price: album.price, quantity: numberItems, stock: album.stock }} />
+                {/* <SubmitButton className={styles.button}>Order</SubmitButton> */}
               </Card.Body>
             </Card.Body>
           </Col>

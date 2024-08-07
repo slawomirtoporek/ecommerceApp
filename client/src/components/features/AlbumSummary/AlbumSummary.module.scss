@@ -20,6 +20,10 @@
 }
 
 .button {
-  background-color: $color-grey !important;
+  background-color: $submit-btn !important;
   border: none !important;
+
+  &:hover {
+    background: darken($submit-btn-hover, 10%) !important;
+  }
 }
