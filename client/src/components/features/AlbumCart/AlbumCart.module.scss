@@ -1,0 +1,38 @@
+@import '../../../styles/settings.scss'; 
+
+.cartList {
+  list-style: none;
+}
+
+.cartList li:nth-child(odd) {
+  background-color: $cart-list-list-odd;
+}
+
+.button {
+  background-color: $submit-btn !important;
+  border: none !important;
+  margin: 5px;
+  position: relative;
+
+  &:hover {
+    background: darken($submit-btn-hover, 10%) !important;
+  }
+}
+
+.btnTrash {
+  width: 32px !important;
+  height: 32px !important;
+  margin: 0 10px 6px 5px;
+}
+
+.icon {
+  font-size: 14px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+}
+
+.fullHeightContainer {
+  min-height: 100vh;
+}

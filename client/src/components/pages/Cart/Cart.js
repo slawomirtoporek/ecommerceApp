@@ -1,6 +1,9 @@
+import AlbumCart from '../../features/AlbumCart/AlbumCart';
+
 const Cart = () => {
-  return(
-    <h1>Cart</h1>
+  
+  return (
+    <AlbumCart />
   );
 };
 
