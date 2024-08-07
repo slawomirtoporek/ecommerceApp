@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { addToCartRequest } from '../../../redux/orderItemsRedux';
 import { Button } from 'react-bootstrap';
@@ -14,6 +15,10 @@ const AddToCartBtn = ({ item }) => {
   };
 
   return <Button onClick={handleAddToCart} className={styles.button}>Add to Cart</Button>;
+};
+
+AddToCartBtn.propTypes = {
+  item: PropTypes.object.isRequired,
 };
 
 export default AddToCartBtn;

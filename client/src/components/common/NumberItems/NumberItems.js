@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import styles from './NumberItems.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
@@ -19,6 +20,13 @@ const NumberItems = ({ numberItems, stock, actPlus, actMinus }) => {
       </button>
     </>
   );
+};
+
+NumberItems.propTypes = {
+  numberItems: PropTypes.number.isRequired,
+  stock: PropTypes.number.isRequired,
+  actPlus: PropTypes.func.isRequired,
+  actMinus: PropTypes.func.isRequired
 };
 
 export default NumberItems;

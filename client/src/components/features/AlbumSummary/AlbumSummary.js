@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Card } from 'react-bootstrap';
 import { IMAGES_URL } from '../../../config';
 import { Link } from 'react-router-dom';
@@ -24,6 +25,10 @@ const SummaryAlbum = ({ album }) => {
       </Card.Body>
     </Card>
   );
+};
+
+SummaryAlbum.propTypes = {
+  album: PropTypes.object.isRequired
 };
 
 export default SummaryAlbum;

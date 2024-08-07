@@ -89,7 +89,6 @@ const AlbumData = () => {
               </Card.Body>
               <Card.Body className="d-flex align-items-center flex-column p-0">
                 <AddToCartBtn item={{ id: album.id, title: album.title, price: album.price, quantity: numberItems, stock: album.stock }} />
-                {/* <SubmitButton className={styles.button}>Order</SubmitButton> */}
               </Card.Body>
             </Card.Body>
           </Col>

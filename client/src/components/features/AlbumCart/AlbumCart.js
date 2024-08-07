@@ -83,7 +83,7 @@ const AlbumCart = () => {
               <h3 className='my-4'>Cart</h3>
               <ul className={`${styles.cartList} p-0`}>
               {items && items.map((item, index) => (
-                <li key={index}  className='p-3'>
+                <li key={index}  className='p-2'>
                   <div className='m-2'>
                     <h5 className='d-inline'>{item.title}</h5> 
                   </div>
